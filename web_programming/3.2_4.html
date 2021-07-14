@@ -1,0 +1,17 @@
+<body>
+  <ul>
+    <li>first</li>
+    <li>second</li>
+    <li>third</li>
+  </ul>
+  <button onclick = "setColor()"> Clcik</button>
+  <script>
+   function setColor(){
+     var li = document.querySelectorAll("li");
+     for (var i=0;i<li.length;i++){
+       li[i].style.backgroundColor ='red';
+       li[i].style.color ='blue';
+     }
+   }
+  </script>
+</body>
