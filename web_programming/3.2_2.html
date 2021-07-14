@@ -1,0 +1,16 @@
+<body>
+  <ul> 
+    <li class="odd"> first </li>
+    <li class="even"> second </li>
+    <li class="odd"> third </li>
+  </ul>
+  <button onclick = "setColor()">Click</button>
+<script>
+  function setColor(){
+    var li = document.getElementsByClassName("odd");
+    for(var i=0; i<li.length; i++){
+      li[i].style.backgroundColor = "red";
+      li[i].style.color = 'blue';
+    }}
+  </script>
+</body>
