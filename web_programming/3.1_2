@@ -1,0 +1,9 @@
+<body>
+  <ul> <li> first </li> <li> second </li> <li> third </li>
+<script>
+  var li = document.querySelector('li');
+  
+  li.style.color ='red';
+  li.style.background ='blue';
+  </script>
+</body>
