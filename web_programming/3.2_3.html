@@ -1,0 +1,18 @@
+<body>
+  <ul> 
+    <li name="ab"> first </li>
+    <li name="ab"> second </li>
+    <li name="bc"> third </li>
+  </ul>
+  <button onclick = "setColor()">Click</button>
+<script>
+  function setColor(){
+    var li = document.getElementsByName("ab");
+    for(var i=0; i<li.length; i++){
+      li[i].style.backgroundColor = "red";
+      li[i].style.color = 'blue';
+    }}
+  </script>
+</body>
+
+//document.getElementsByName()
