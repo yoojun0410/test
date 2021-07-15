@@ -1,0 +1,19 @@
+<head>
+  <style>     //style은 보통 head안에 넣는다
+    #box{     //id가 box인 element의 style
+      width: 100px;height: 100px;
+      border: 1px solid black;    //경계선(실선,검은색)
+    }
+  </style>
+</head>
+<body>
+  <div id = "box" style = "background-color:yellow;color:blue">색상바꾸기 </div>   //element에서 하는 것은 비추함  -으로 연결
+  <button onclick = "setColor()">click</button>
+  <script>
+    function setColor(){
+      var box = document.getElementById("box");
+      box.style.color ="white";
+      box.style.backgroundColor = "orange";     //camelcase로 연결
+    }
+  </script>
+</body>
