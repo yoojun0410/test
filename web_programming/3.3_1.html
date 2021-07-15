@@ -1,0 +1,11 @@
+<body>
+  <div id ="content"> </div>
+  <div id ="debug"> </div>
+  <script>
+    var content = document.querySelector('#content');
+    content.innerText ="<h1>nex Text!!</h1>";
+    content.innerHTML += "<h1>new Text!!</h1>";
+    
+    document.querySelector("#debug").innerText = content.outerHTML;
+  </script>
+</body>
