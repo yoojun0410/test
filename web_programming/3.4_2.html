@@ -1,0 +1,21 @@
+-----------속 성 제 거----------------
+
+<head><style>
+   #box {
+      width: 100px;
+      height:100px;
+     border: 3px solid black;}
+  .box{color:blue;}
+  .box2{background:yellow;}
+  </style></head>
+<div id = 'box' class = 'box box2' onclick = 'changeColor()'>Hello box </div>
+<script>
+  var box = document.getElementById('box');
+  box.innerHTML = box.getAttribute('class');
+  function changeColor(){
+    box.removeAttribute('class');
+    box.innerHTML = box.getAttribute('class');
+  }
+  
+</script>
+</body>   
