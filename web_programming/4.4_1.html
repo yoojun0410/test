@@ -1,0 +1,89 @@
+<head>
+    <meta charset = "utf-8">
+    <style>
+        #box{
+            width:100px;height:100px;border:3px solid black;
+        }
+        #box.hover {
+            background:orange; color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id = "box">
+        <p>마우스를 올려 주세요</p>
+    </div>
+    <script>
+        var box = document.getElementById('box');
+        //마우스 오버
+        box.addEventListener('mouseover',function(){
+            box.setAttribute('class','hover');
+        });
+        //마우스 아웃
+        box.addEventListener('mouseout',function(){
+            box.removeAttribute('class');
+        });
+    </script>
+</body>
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트 핸들러</title>
+</head>
+<body>
+    <form id ="frm">
+        <fieldset>
+            <legned>주소록</legned>
+            <textarea name ="txt" id ="txt" cols ="30" rows = "10"></textarea><br>
+            <input type="submit" id = "q" value="불러오기">
+        </fieldset>
+    </form>
+
+    <script>
+        var address = ["김철수","email: kcs@gmail.com"];
+
+        var q = document.getElementById('frm');
+
+        function addr_search(event){
+            var textarea = q.txt;
+            
+            //textarea에 주소록 표시
+            textarea.value = '이름 / 주소 \n';
+            textarea.value += address[0] + ', '+ address[1] + '\n';
+        }
+
+        //폼 제출시
+        q.addEventListener('submit',function(event){
+            event.preventDefault(); //기본이벤트 해제
+            addr_search(); //주소록 불러오기
+        });    //리스너 방식에서는 preventdefault만 가능함
+    </script>
+</body>
+</html>
+
+#드래그 앤 드랍
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {width:500px; height: 100px; padding: 20px; border: 1px solid #999;}
+        </style><script>
+            function allowDrop(ev) {ev.preventDefault();}
+            function drag(ev) {ev.dataTransfer.setData("text",ev.target.id);}
+            function drop(ev) {ev.preventDefault();
+                var data = ev.dataTransfer.getData("text");
+                ev.target.appendChild(document.getElementById(data));
+                this.x = ev.clientX;
+                this.y = ev.clientY;
+                console.log(ev.clientX, ":",ev.clientY);
+        }
+        </script>
+    </head>
+    <body>
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h1 id="drag1" draggable="true" ondragstart="drag(event)">글자를 끌어서 움직여 보세요!</h1></div>
+    </body>
+</html>
